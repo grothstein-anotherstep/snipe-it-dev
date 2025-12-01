@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile.alpine
     container_name: snipeit
     ports:
-      - "8000:80"
+      - "8001:80"
     depends_on:
       redis:
         # The default needs to be stated.
@@ -27,7 +27,7 @@ services:
     env_file:
       - .env.dev.docker
     ports:
-      - "3306:3306"
+      - "3308:3306"
     healthcheck:
       # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
